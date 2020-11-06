@@ -167,6 +167,11 @@ func (c *CronoWriter) Write(b []byte) (int, error) {
 	return c.write(b, nil)
 }
 
+// Sync sync file pointer.
+func (c *CronoWriter) Sync() error {
+	return c.sync()
+}
+
 // Path returns the current writing file path.
 func (c *CronoWriter) Path() string {
 	return c.path
@@ -212,4 +217,9 @@ func (c *CronoWriter) write(b []byte, err error) (int, error) {
 
 	c.log.Write(b)
 	return c.fp.Write(b)
+}
+
+func (c *CronoWriter) sync() error {
+	//c.log.Sync()
+	return c.fp.Sync()
 }

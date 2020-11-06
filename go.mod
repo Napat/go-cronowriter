@@ -1,4 +1,4 @@
-module github.com/utahta/go-cronowriter
+module github.com/Napat/go-cronowriter
 
 go 1.11
 
